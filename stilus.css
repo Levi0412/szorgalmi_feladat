@@ -1,9 +1,16 @@
-body {
-    background-color: #282c34;
-    color: #f0f0f0;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+/* Globális stílusok */
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0; /* Halvány szürke */
+    color: #333;
+    line-height: 1.6;
+    overflow-y: auto;
     padding: 20px;
 }
 
@@ -11,36 +18,210 @@ body {
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: rgba(50, 50, 50, 0.9);
+    background-color: #f0f0f0; /* Világos szürke */
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-}
-.fejlec {
-    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-ul {
+/* Fejléc */
+.fejlec {
+    background-image: url(KEPEK/S10187_product.webp);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fejlec h1 {
+    font-size: 2.2em;
+    color: #ff4500; /* Tűzpiros */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+/* Menü */
+.menu ul {
+    display: flex;
+    justify-content: center;
     list-style-type: none;
     padding: 0;
-}
-li {
-    background: rgba(255, 255, 255, 0.1);
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-li:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-a {
-    color: black;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-p {
-	text-align: justify;
+    margin-bottom: 20px;
 }
 
+.menu ul li {
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #ff4500;
+    transform: scale(1.1);
+}
+
+/* Tartalom */
+.tartalom {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85); /* Fehér, de áttetsző */
+    border-radius: 8px;
+}
+
+h2, h4 {
+    color: #2e8b57; /* Sötét zöld */
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin: 20px 0;
+}
+
+p {
+    text-align: justify;
+    margin: 10px 0;
+    color: #444; /* Sötétebb szürke */
+}
+
+/* Listaelemek */
+.stilusok-csoport ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.stilusok-csoport li {
+    background: rgba(255, 255, 255, 0.8);
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.stilusok-csoport li:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+/* Linkek */
+a {
+    color: #ff4500; /* Tűzpiros */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #d2691e; /* Csokoládé */
+    text-decoration: underline;
+}
+
+/* Lábjegyzet */
+.lablec {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777; /* Világos szürke */
+}
+
+/* Képek */
+img {
+    max-width: 100%;
+    border: 3px solid #2e8b57;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #2e8b57;
+}
+
+/* Animációk */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Reszponzív stílusok */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Csökkentett padding a kisebb képernyőkön */
+    }
+
+    #tarolo {
+        padding: 10px; /* Csökkentett padding */
+    }
+
+    .fejlec h1 {
+        font-size: 1.8em; /* Cím méretének csökkentése */
+    }
+
+    .menu ul {
+        flex-direction: column; /* Menü függőleges elrendezése */
+    }
+
+    .menu ul li {
+        margin: 5px 0; /* Csökkentett margó */
+    }
+
+    h2 {
+        font-size: 1.6em; /* H2 méretének csökkentése */
+    }
+
+    h4 {
+        font-size: 1.4em; /* H4 méretének csökkentése */
+    }
+
+    .tartalom {
+        padding: 15px; /* Csökkentett padding a tartalomban */
+    }
+
+    .lablec {
+        font-size: 0.8em; /* Lábjegyzet betűméretének csökkentése */
+    }
+}
+@media (max-width: 500px) {
+    body {
+        padding: 5px; /* További csökkentett padding */
+    }
+
+    #tarolo {
+        padding: 10px; /* Padding megtartása, de kisebb margó */
+    }
+
+    .fejlec h1 {
+        font-size: 1.6em; /* Cím méretének további csökkentése */
+    }
+
+    .menu ul {
+        flex-direction: column; /* Menü függőleges elrendezése */
+        align-items: center; /* Menü elemek középre igazítása */
+    }
+
+    .menu ul li {
+        margin: 3px 0; /* Még kisebb margó */
+    }
+
+    h2 {
+        font-size: 1.4em; /* H2 méretének további csökkentése */
+    }
+
+    h4 {
+        font-size: 1.2em; /* H4 méretének további csökkentése */
+    }
+
+    .tartalom {
+        padding: 10px; /* Csökkentett padding */
+    }
+
+    .lablec {
+        font-size: 0.7em; /* Lábjegyzet betűméretének csökkentése */
+    }
+}
